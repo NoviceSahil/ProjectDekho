@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".SignIn">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="204dp"
+            app:srcCompat="@drawable/ic_logosvg" />
+
+        <EditText
+            android:id="@+id/etusername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@color/lightGrey"
+            android:textColorHint="@color/white"
+            app:hintTextColor="@color/white"
+            android:ems="10"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:padding="12dp" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="10dp"
+            android:background="@color/lightGrey"
+            android:textColorHint="@color/white"
+            app:hintTextColor="@color/white"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="12dp" />
+
+
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="150dp"
+            android:layout_height="61dp"
+            android:background="@drawable/custombtn"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:text="Login" />
+
+
+
+
+        <LinearLayout
+            android:layout_width="370dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginRight="0dp"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:text="Don't Have an Account ?"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/SignUp2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:text="Sign Up"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#1695FA"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
