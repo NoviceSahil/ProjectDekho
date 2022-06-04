@@ -14,6 +14,8 @@
         android:layout_height="wrap_content"
         android:background="@color/black_shade_1">
 
+
+
         <!--image view for our course-->
         <ImageView
             android:id="@+id/idIVCourse"

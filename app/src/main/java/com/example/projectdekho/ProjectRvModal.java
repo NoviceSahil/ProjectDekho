@@ -7,18 +7,31 @@ public class ProjectRvModal implements Parcelable {
     // creating variables for our different fields.
     private String projectName;
     private String projectDescription;
+    private String batch;
+
+
+
+    public String getBranch() {
+        return branch;
+    }
+
+    public void setBranch(String branch) {
+        this.branch = branch;
+    }
+
+    private String branch;
     private String category;
     private String projectImg;
     private String projectLink;
-    private String courseId;
+    private String projectId;
 
 
-    public String getCourseId() {
-        return courseId;
+    public String getProjectId() {
+        return projectId;
     }
 
-    public void setCourseId(String courseId) {
-        this.courseId = courseId;
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
     }
 
 
@@ -29,9 +42,11 @@ public class ProjectRvModal implements Parcelable {
 
     protected ProjectRvModal(Parcel in) {
         projectName = in.readString();
-        courseId = in.readString();
+        projectId = in.readString();
         projectDescription = in.readString();
+        branch = in.readString();
         category = in.readString();
+        batch = in.readString();
         projectImg = in.readString();
         projectLink = in.readString();
     }
@@ -90,12 +105,23 @@ public class ProjectRvModal implements Parcelable {
         this.projectLink = projectLink;
     }
 
+    public String getBatch() {
+        return batch;
+    }
 
-    public ProjectRvModal(String courseId, String projectName, String courseDescription, String coursePrice, String bestSuitedFor, String projectImg, String projectLink) {
+    public void setBatch(String batch) {
+        this.batch = batch;
+    }
+
+
+
+    public ProjectRvModal(String projectId, String projectName, String projectDescription, String  bestSuitedFor ,String category, String batch, String projectImg, String projectLink) {
         this.projectName = projectName;
-        this.courseId = courseId;
-        this.projectDescription = courseDescription;
-        this.category = bestSuitedFor;
+        this.projectId = projectId;
+        this.projectDescription = projectDescription;
+        this.branch = bestSuitedFor;
+        this.category = category;
+        this.batch = batch;
         this.projectImg = projectImg;
         this.projectLink = projectLink;
     }
@@ -108,13 +134,15 @@ public class ProjectRvModal implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(projectName);
-        dest.writeString(courseId);
+        dest.writeString(projectId);
         dest.writeString(projectDescription);
+        dest.writeString(branch);
         dest.writeString(category);
+        dest.writeString(batch);
         dest.writeString(projectImg);
         dest.writeString(projectLink);
     }
-
-
 }
+
+
 

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ProjectDekho</string>
+    <string name="product_name" />
+    <string name="Search" />
 </resources>

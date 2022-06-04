@@ -69,11 +69,24 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/idTVBatch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idTVCoursePrice"
+        android:layout_margin="4dp"
+        android:layout_toRightOf="@id/idIVCourse"
+        android:padding="3dp"
+        android:text="Batch"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idTVCoursePrice"
+        android:layout_below="@id/idTVBatch"
         android:orientation="horizontal"
         android:weightSum="2">
 

@@ -6,8 +6,70 @@
     android:id="@+id/idRLHome"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black_shade_1"
+    android:background="@color/white"
     tools:context=".MainActivity">
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextProduct"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_marginStart="20dp"-->
+<!--    android:layout_marginTop="50dp"-->
+<!--        android:layout_above="@id/editTextPrice"-->
+<!--    android:autofillHints=""-->
+<!--    android:ems="10"-->
+<!--    android:hint="product_name"-->
+<!--    android:inputType="textPersonName" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextPrice"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_marginStart="200dp"-->
+<!--    android:layout_marginTop="50dp"-->
+<!--        android:layout_above="@id/button"-->
+
+<!--        android:autofillHints=""-->
+<!--    android:ems="10"-->
+<!--    android:hint="price"-->
+<!--    android:inputType="textPersonName"/>-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_marginStart="150dp"-->
+<!--    android:layout_marginTop="20dp"-->
+<!--    android:onClick="InsertButton"-->
+<!--    android:text="insert"/>-->
+
+<!--    <ListView-->
+<!--        android:id="@+id/listView"-->
+<!--    android:layout_width="300dp"-->
+<!--    android:layout_height="400dp"-->
+<!--    android:layout_marginStart="50dp"-->
+<!--        android:layout_above="@id/idRVCourses"-->
+
+<!--        android:layout_marginTop="200dp"/>-->
+
+<!--&lt;!&ndash;    <SearchView&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/serachview"&ndash;&gt;-->
+<!--&lt;!&ndash;    android:layout_width="350dp"&ndash;&gt;-->
+<!--&lt;!&ndash;    android:layout_height="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;    android:layout_marginStart="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;    android:layout_marginTop="100dp"/>&ndash;&gt;-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textViewSearch"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_marginStart="20dp"-->
+<!--        android:layout_above="@id/idRVCourses"-->
+
+
+<!--        android:layout_marginTop="150dp"-->
+<!--    android:text="search_result"/>-->
+
 
     <!--recycler view for our data-->
     <androidx.recyclerview.widget.RecyclerView
@@ -35,8 +97,11 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="20dp"
         android:src="@drawable/ic_add"
-        app:background="@color/black_shade_1"
+        app:background="@color/white"
         app:backgroundTint="@color/black_shade_2"
         app:tint="@color/white" />
+
+
+
 
 </RelativeLayout>

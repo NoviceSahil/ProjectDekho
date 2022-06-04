@@ -25,13 +25,13 @@ public class EditProjectActivity extends AppCompatActivity {
 
     // creating variables for our edit text, firebase database,
     // database reference, course rv modal,progress bar.
-    private TextInputEditText courseNameEdt, courseDescEdt, coursePriceEdt, bestSuitedEdt, courseImgEdt, courseLinkEdt;
+    private TextInputEditText projectNameEdt, projectDescEdt,   bestSuitedEdt , batchEdt, categoryEdt , projectImgEdt, projectLinkEdt;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
-    ProjectRvModal courseRVModal;
+    ProjectRvModal projectRVModal;
     private ProgressBar loadingPB;
     // creating a string for our course id.
-    private String courseID;
+    private String projectID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,31 +39,34 @@ public class EditProjectActivity extends AppCompatActivity {
         setContentView(R.layout.edit_project);
         // initializing all our variables on below line.
         Button addCourseBtn = findViewById(R.id.idBtnAddCourse);
-        courseNameEdt = findViewById(R.id.idEdtCourseName);
-        courseDescEdt = findViewById(R.id.idEdtCourseDescription);
-        coursePriceEdt = findViewById(R.id.idEdtCoursePrice);
+        projectNameEdt = findViewById(R.id.idEdtCourseName);
+        projectDescEdt = findViewById(R.id.idEdtCourseDescription);
+        categoryEdt  = findViewById(R.id.idEdtCoursePrice);
+        batchEdt = findViewById(R.id.idEdtBatch);
         bestSuitedEdt = findViewById(R.id.idEdtSuitedFor);
-        courseImgEdt = findViewById(R.id.idEdtCourseImageLink);
-        courseLinkEdt = findViewById(R.id.idEdtCourseLink);
+        projectImgEdt = findViewById(R.id.idEdtCourseImageLink);
+        projectLinkEdt = findViewById(R.id.idEdtCourseLink);
         loadingPB = findViewById(R.id.idPBLoading);
         firebaseDatabase = FirebaseDatabase.getInstance();
         // on below line we are getting our modal class on which we have passed.
-        courseRVModal = getIntent().getParcelableExtra("course");
+        projectRVModal = getIntent().getParcelableExtra("project");
         Button deleteCourseBtn = findViewById(R.id.idBtnDeleteCourse);
 
-        if (courseRVModal != null) {
+        if (projectRVModal != null) {
             // on below line we are setting data to our edit text from our modal class.
-            courseNameEdt.setText(courseRVModal.getprojectName());
-            coursePriceEdt.setText(courseRVModal.getCategory());
-            bestSuitedEdt.setText(courseRVModal.getCategory());
-            courseImgEdt.setText(courseRVModal.getprojectImg());
-            courseLinkEdt.setText(courseRVModal.getprojectLink());
-            courseDescEdt.setText(courseRVModal.getProjectDescription());
-            courseID = courseRVModal.getCourseId();
+            projectNameEdt.setText(projectRVModal.getprojectName());
+            bestSuitedEdt.setText(projectRVModal.getBranch());
+            categoryEdt.setText(projectRVModal.getCategory());
+            batchEdt.setText(projectRVModal.getBatch());
+            projectImgEdt.setText(projectRVModal.getprojectImg());
+            projectLinkEdt.setText(projectRVModal.getprojectLink());
+            projectDescEdt.setText(projectRVModal.getProjectDescription());
+             projectID = projectRVModal.getProjectId();
         }
 
         // on below line we are initialing our database reference and we are adding a child as our course id.
-        databaseReference = firebaseDatabase.getReference("Courses").child("aaa");
+//        Toast.makeText(this, projectID, Toast.LENGTH_SHORT).show();
+        databaseReference = firebaseDatabase.getReference("Projects").child(projectID);
         // on below line we are adding click listener for our add course button.
         addCourseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,22 +74,24 @@ public class EditProjectActivity extends AppCompatActivity {
                 // on below line we are making our progress bar as visible.
                 loadingPB.setVisibility(View.VISIBLE);
                 // on below line we are getting data from our edit text.
-                String courseName = courseNameEdt.getText().toString();
-                String courseDesc = courseDescEdt.getText().toString();
-                String coursePrice = coursePriceEdt.getText().toString();
+                String projectName = projectNameEdt.getText().toString();
+                String projectDesc = projectDescEdt.getText().toString();
+                String category =    categoryEdt.getText().toString();
+                String batch     =      batchEdt.getText().toString();
                 String bestSuited = bestSuitedEdt.getText().toString();
-                String courseImg = courseImgEdt.getText().toString();
-                String courseLink = courseLinkEdt.getText().toString();
+                String projectImg = projectImgEdt.getText().toString();
+                String projectLink = projectLinkEdt.getText().toString();
                 // on below line we are creating a map for
                 // passing a data using key and value pair.
                 Map<String, Object> map = new HashMap<>();
-                map.put("courseName", courseName);
-                map.put("courseDescription", courseDesc);
-                map.put("coursePrice", coursePrice);
+                map.put("projectName", projectName);
+                map.put("projectDescription", projectDesc);
+                map.put("category", category);
                 map.put("bestSuitedFor", bestSuited);
-                map.put("courseImg", courseImg);
-                map.put("courseLink", courseLink);
-                map.put("courseId", courseID);
+                map.put("batch",batch);
+                map.put("projectImg", projectImg);
+                map.put("projectLink", projectLink);
+                map.put("projectId", projectID);
 
                 // on below line we are calling a database reference on
                 // add value event listener and on data change method
@@ -98,7 +103,7 @@ public class EditProjectActivity extends AppCompatActivity {
                         // adding a map to our database.
                         databaseReference.updateChildren(map);
                         // on below line we are displaying a toast message.
-                        Toast.makeText(EditProjectActivity.this, "Course Updated..", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(EditProjectActivity.this, "Project Updated..", Toast.LENGTH_SHORT).show();
                         // opening a new activity after updating our coarse.
                         startActivity(new Intent(EditProjectActivity.this, MainActivity.class));
                     }
@@ -106,7 +111,7 @@ public class EditProjectActivity extends AppCompatActivity {
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
                         // displaying a failure message on toast.
-                        Toast.makeText(EditProjectActivity.this, "Fail to update course..", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(EditProjectActivity.this, "Fail to update project..", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
