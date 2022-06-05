@@ -232,7 +232,7 @@ public class MainActivity extends AppCompatActivity implements ProjectRvAdapter.
 
         bottomSheetTeachersDialog.show();
 
-        TextView ProjectNameTV = layout.findViewById(R.id.idTVProjectName);
+        TextView ProjectNameTV = layout.findViewById(R.id.idTVProjectNameH);
         TextView ProjectDescTV = layout.findViewById(R.id.idTVProjectDesc);
         TextView suitedForTV = layout.findViewById(R.id.idTVBranch1);
         TextView CategoryTV = layout.findViewById(R.id.idTVCategory1);

@@ -72,10 +72,10 @@ public class EditProjectActivity extends AppCompatActivity {
 
                 String projectName = projectNameEdt.getText().toString();
                 String projectDesc = projectDescEdt.getText().toString();
-                String category =    categoryEdt.getText().toString();
-                String batch     =      batchEdt.getText().toString();
-                String bestSuited = bestSuitedEdt.getText().toString();
-                String projectImg = projectImgEdt.getText().toString();
+                String category    =    categoryEdt.getText().toString();
+                String batch       =       batchEdt.getText().toString();
+                String bestSuited  =  bestSuitedEdt.getText().toString();
+                String projectImg  =  projectImgEdt.getText().toString();
                 String projectLink = projectLinkEdt.getText().toString();
 
                 Map<String, Object> map = new HashMap<>();
@@ -89,14 +89,15 @@ public class EditProjectActivity extends AppCompatActivity {
                 map.put("projectId", projectID);
 
 
-                databaseReference.addValueEventListener(new ValueEventListener() {
+                databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         loadingPB.setVisibility(View.GONE);
                         databaseReference.updateChildren(map);
                         Toast.makeText(EditProjectActivity.this, "Project Updated..", Toast.LENGTH_SHORT).show();
-                        // opening a new activity after updating our coarse.
-                        Intent i = new Intent(EditProjectActivity.this, MainActivity.class);
+                       Intent i= new Intent(EditProjectActivity.this, MainActivity.class);
+                        startActivity(i);
+                        finish();
                     }
 
                     @Override

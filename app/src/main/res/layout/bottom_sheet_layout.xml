@@ -8,7 +8,7 @@
     android:padding="4dp">
 
     <TextView
-        android:id="@+id/idTVProjectName"
+        android:id="@+id/idTVProjectNameH"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
@@ -22,7 +22,7 @@
         android:id="@+id/idIVImage"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_below="@id/idTVProjectName"
+        android:layout_below="@id/idTVProjectNameH"
         android:layout_centerVertical="true"
         android:layout_margin="4dp"
         android:padding="4dp"
@@ -32,7 +32,7 @@
         android:id="@+id/idTVProjectDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idTVProjectName"
+        android:layout_below="@id/idTVProjectNameH"
         android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="4dp"
@@ -92,19 +92,6 @@
         android:text="Batch : "
         android:textColor="@color/black"
         android:textSize="18sp"
-        android:textStyle="bold" />
-
-<!--    <TextView-->
-<!--        android:id="@+id/idTVBatch"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@id/idTVBranch1"-->
-<!--        android:layout_margin="4dp"-->
-<!--        android:layout_toRightOf="@id/idTVBranch1"-->
-<!--        android:padding="3dp"-->
-<!--        android:text="Batch"-->
-<!--        android:textColor="@color/white"-->
-<!--        android:textSize="18sp"-->
         android:textStyle="bold" />
 
 
