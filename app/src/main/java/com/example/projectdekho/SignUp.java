@@ -34,7 +34,7 @@ public class SignUp extends AppCompatActivity {
 
 
 
-            EditText uNameEdt = findViewById(R.id.username);
+        EditText uNameEdt = findViewById(R.id.username);
         EditText pwdEdt = findViewById(R.id.etPassword);
         loadingPB = findViewById(R.id.progressBar);
         confirmPwdEdt = findViewById(R.id.etCnfPassword);

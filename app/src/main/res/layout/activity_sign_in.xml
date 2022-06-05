@@ -25,13 +25,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:background="@color/lightGrey"
-            android:textColorHint="@color/white"
-            app:hintTextColor="@color/white"
+            android:background="@color/light_blue_shade_1"
             android:ems="10"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:padding="12dp" />
+            android:padding="12dp"
+            android:textColorHint="@color/white"
+            app:hintTextColor="@color/white" />
 
         <EditText
             android:id="@+id/etPassword"
@@ -39,15 +39,26 @@
             android:layout_height="wrap_content"
 
             android:layout_marginTop="10dp"
-            android:background="@color/lightGrey"
-            android:textColorHint="@color/white"
-            app:hintTextColor="@color/white"
+            android:background="@color/light_blue_shade_1"
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
-            android:padding="12dp" />
+            android:padding="12dp"
+            android:textColorHint="@color/white"
+            app:hintTextColor="@color/white" />
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="118dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
 
+            android:indeterminate="true"
+            android:indeterminateDrawable="@drawable/progress"
+            android:max="100"
+            android:progress="0"
+            android:visibility="gone" />
 
         <Button
             android:id="@+id/btnLogin"

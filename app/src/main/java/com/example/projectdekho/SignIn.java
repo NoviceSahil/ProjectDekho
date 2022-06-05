@@ -51,7 +51,7 @@ public class SignIn extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                loadingPB.setVisibility(View.VISIBLE);
+             //  loadingPB.setVisibility(View.GONE);
 
                 String email = uNameEdt.getText().toString();
                 String password = pwdEdt.getText().toString();
@@ -67,14 +67,14 @@ public class SignIn extends AppCompatActivity {
 
                             if (task.isSuccessful()) {
 
-                                loadingPB.setVisibility(View.GONE);
+                              // loadingPB.setVisibility(View.GONE);
                                 Toast.makeText(SignIn.this, "Login Successful", Toast.LENGTH_SHORT).show();
 
                                 Intent i = new Intent(SignIn.this, MainActivity.class);
                                 startActivity(i);
                                 finish();
                             } else {
-                                loadingPB.setVisibility(View.GONE);
+                            // loadingPB.setVisibility(View.GONE);
                                 Toast.makeText(SignIn.this, "Please enter valid user credentials..", Toast.LENGTH_SHORT).show();
                             }
                         }

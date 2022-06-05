@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/dell/AndroidStudioProjects/ProjectDekho3/app/src/main/res/drawable/progress.xml" value="0.1" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/ProjectDekho3/app/src/main/res/layout/activity_sign_in.xml" value="0.1" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/ProjectDekho3/app/src/main/res/layout/activity_sign_up.xml" value="0.1578125" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/ProjectDekho3/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
         <entry key="..\:/Users/mihir/AndroidStudioProjects/ProjectDekho/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.127" />
         <entry key="..\:/Users/mihir/AndroidStudioProjects/ProjectDekho/app/src/main/res/drawable/button_back.xml" value="0.2045" />
         <entry key="..\:/Users/mihir/AndroidStudioProjects/ProjectDekho/app/src/main/res/drawable/custombtn.xml" value="0.2045" />
