@@ -105,7 +105,7 @@ public class EditProjectActivity extends AppCompatActivity {
                         // on below line we are displaying a toast message.
                         Toast.makeText(EditProjectActivity.this, "Project Updated..", Toast.LENGTH_SHORT).show();
                         // opening a new activity after updating our coarse.
-                        startActivity(new Intent(EditProjectActivity.this, MainActivity.class));
+                        Intent i = new Intent(EditProjectActivity.this, MainActivity.class);
                     }
 
                     @Override

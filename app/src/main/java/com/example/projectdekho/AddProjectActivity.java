@@ -65,7 +65,7 @@ public class AddProjectActivity extends AppCompatActivity {
                 String bestSuited = branch.getText().toString();
                 String batch = batchEdt.getText().toString();
                 String  category = bestSuitedEdt.getText().toString();
-                String projectImg = projectImgEdt.getText().toStrigitng();
+                String projectImg = projectImgEdt.getText().toString();
                 String projectLink = projectLinkEdt.getText().toString();
                 projectID = projectName;
                 // on below line we are passing all data to our modal class.
