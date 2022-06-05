@@ -48,6 +48,8 @@ public class AddProjectActivity extends AppCompatActivity {
             NotificationChannel channel = new NotificationChannel("1", "Project Added", NotificationManager.IMPORTANCE_DEFAULT);
             NotificationManager manager = getSystemService(NotificationManager.class);
             manager.createNotificationChannel(channel);
+            }
+
         loadingPB = findViewById(R.id.idPBLoading);
         firebaseDatabase = FirebaseDatabase.getInstance();
 
@@ -69,7 +71,7 @@ public class AddProjectActivity extends AppCompatActivity {
 
                 ProjectRvModal projectRVModal = new ProjectRvModal(projectID, projectName, projectDesc, bestSuited ,category, batch , projectImg, projectLink);
 
-                databaseReference.addValueEventListener(new ValueEventListener() {
+                databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -78,9 +80,10 @@ public class AddProjectActivity extends AppCompatActivity {
                         } else {
                             databaseReference.child(projectID).setValue(projectRVModal);
 
-                           /* Toast.makeText(AddProjectActivity.this, "project Added..", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AddProjectActivity.this, "Project Added !", Toast.LENGTH_SHORT).show();
+
                             NotificationCompat.Builder builder = new NotificationCompat.Builder(AddProjectActivity.this, "New Project Added");
-                            builder.setContentTitle("Project Added");
+                            builder.setContentTitle("Added");
                             builder.setContentText("Hey Buddy, Your project is added");
                             builder.setSmallIcon(R.drawable.ic_logosvg);
                             builder.setAutoCancel(true);
@@ -88,7 +91,7 @@ public class AddProjectActivity extends AppCompatActivity {
 
 
                             NotificationManagerCompat managerCompat = NotificationManagerCompat.from(AddProjectActivity.this);
-                            managerCompat.notify(1, builder.build());*/
+                            managerCompat.notify(1, builder.build());
 
                             startActivity(new Intent(AddProjectActivity.this, MainActivity.class));
                         }
@@ -103,4 +106,4 @@ public class AddProjectActivity extends AppCompatActivity {
             }
         });
     }
-}}
+}
