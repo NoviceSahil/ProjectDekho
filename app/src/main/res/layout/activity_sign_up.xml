@@ -87,7 +87,6 @@
                 android:padding="3dp"
                 android:text="Have An Account ? "
                 android:textColor="@color/black"
-                android:textStyle="bold"
                 android:textSize="19dp" />
 
             <TextView

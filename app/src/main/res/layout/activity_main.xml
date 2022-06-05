@@ -6,12 +6,11 @@
     android:id="@+id/idRLHome"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black_shade_1"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
-    <!--recycler view for our data-->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/idRVCourses"
+        android:id="@+id/idRVProjects"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:listitem="@layout/project_rv_item" />
@@ -27,7 +26,7 @@
 
     <!--floating action button-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/idFABAddCourse"
+        android:id="@+id/idFABAddProject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -35,8 +34,8 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="20dp"
         android:src="@drawable/ic_add"
-        app:background="@color/black_shade_1"
-        app:backgroundTint="@color/black_shade_2"
+        app:background="@color/white"
+        app:backgroundTint="@color/light_blue_shade"
         app:tint="@color/white" />
 
 </RelativeLayout>

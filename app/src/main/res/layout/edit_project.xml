@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black_shade_1"
+    android:background="@color/white"
     tools:context=".EditProjectActivity">
 
     <RelativeLayout
@@ -17,162 +17,186 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!--edit text for adding a course name-->
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/idTILCourseName"
+                android:id="@+id/idTILProjectNameEdit"
                 style="@style/LoginTextInputLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="Enter Course Name"
+                android:hint="Edit Project Name"
                 android:padding="5dp"
-                android:textColorHint="@color/white"
-                app:hintTextColor="@color/white">
+                android:textColorHint="@color/black"
+                app:hintTextColor="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtCourseName"
+                    android:id="@+id/idEdtProjectNameEdit"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ems="10"
                     android:importantForAutofill="no"
                     android:inputType="textImeMultiLine|textMultiLine"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <!--edit text for adding a course price-->
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/idTILCoursePrice"
+                android:id="@+id/idTILBranchEdit"
                 style="@style/LoginTextInputLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="Enter Course Price"
+                android:hint="Edit Branch"
                 android:padding="5dp"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/black"
                 app:boxStrokeColor="@color/purple_200"
                 app:hintTextColor="@color/white">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtCoursePrice"
+                    android:id="@+id/idEdtBranchEdit"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ems="10"
                     android:importantForAutofill="no"
-                    android:inputType="phone"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
+                    android:inputType="textImeMultiLine|textMultiLine"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
                     android:textSize="14sp"
                     app:boxStrokeColor="@color/purple_200" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--edit text for adding a course best suited for-->
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/idTILCourseSuitedFor"
+                android:id="@+id/idTILBatchYearEdit"
                 style="@style/LoginTextInputLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="Enter Course Suited For"
+                android:hint="Edit Your Batch Year"
                 android:padding="5dp"
-                android:textColorHint="@color/white"
-                app:hintTextColor="@color/white">
+                android:textColorHint="@color/black"
+                app:boxStrokeColor="@color/purple_200"
+                app:hintTextColor="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtSuitedFor"
+                    android:id="@+id/idEdtBatchYearEdit"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ems="10"
                     android:importantForAutofill="no"
                     android:inputType="textImeMultiLine|textMultiLine"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
-                    android:textSize="14sp" />
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="14sp"
+                    app:boxStrokeColor="@color/purple_200" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--edit text for adding a course image link-->
+
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/idTILCourseImageLink"
+                android:id="@+id/idTILCategoryEdit"
                 style="@style/LoginTextInputLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="Enter Course Image Link"
+                android:hint="Enter Category"
                 android:padding="5dp"
-                android:textColorHint="@color/white"
-                app:hintTextColor="@color/white">
+                android:textColorHint="@color/black"
+                app:hintTextColor="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtCourseImageLink"
+                    android:id="@+id/idEdtCategoryEdit"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ems="10"
                     android:importantForAutofill="no"
                     android:inputType="textImeMultiLine|textMultiLine"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--edit text for adding a course link-->
+
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/idTILCourseLink"
+                android:id="@+id/idTILProjectImageLinkEdit"
                 style="@style/LoginTextInputLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="Enter Course Link"
+                android:hint="Enter Project Image Link"
                 android:padding="5dp"
-                android:textColorHint="@color/white"
-                app:hintTextColor="@color/white">
+                android:textColorHint="@color/black"
+                app:hintTextColor="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtCourseLink"
+                    android:id="@+id/idEdtProjectImageLinkEdit"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ems="10"
                     android:importantForAutofill="no"
                     android:inputType="textImeMultiLine|textMultiLine"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/idTILProjectLinkEdit"
+                style="@style/LoginTextInputLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="Enter Project Link"
+                android:padding="5dp"
+                android:textColorHint="@color/black"
+                app:hintTextColor="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/idEdtProjectLinkEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:importantForAutofill="no"
+                    android:inputType="textImeMultiLine|textMultiLine"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <!--edit text for adding a course description-->
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/idTILCourseDescription"
+                android:id="@+id/idTILProjectsDetailsEdit"
                 style="@style/LoginTextInputLayoutStyle"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="Enter Course Description"
+                android:hint="Enter Project Description"
                 android:padding="5dp"
-                android:textColorHint="@color/white"
-                app:hintTextColor="@color/white">
+                android:textColorHint="@color/black"
+                app:hintTextColor="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/idEdtCourseDescription"
+                    android:id="@+id/idEdtProjectsDetailsEdit"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ems="10"
                     android:importantForAutofill="no"
                     android:inputType="textImeMultiLine|textMultiLine"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -182,23 +206,23 @@
                 android:orientation="horizontal"
                 android:weightSum="2">
 
-                <!--button for updating a new course-->
                 <Button
-                    android:id="@+id/idBtnAddCourse"
+                    android:id="@+id/idBtnUpdateProjectEdit"
                     android:layout_width="0dp"
+
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/button_back"
-                    android:text="Update Your \n Course"
+                    android:background="@drawable/custombtn"
+                    android:text="Update Project"
                     android:textAllCaps="false" />
 
-                <!--button for deleting a course-->
+
                 <Button
-                    android:id="@+id/idBtnDeleteCourse"
+                    android:id="@+id/idBtnDeleteProjectEdit"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -206,8 +230,8 @@
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/button_back"
-                    android:text="Delete Your \n Course"
+                    android:background="@drawable/custombtn"
+                    android:text="Delete Project"
                     android:textAllCaps="false" />
 
             </LinearLayout>
