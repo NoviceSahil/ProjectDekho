@@ -4,68 +4,77 @@
     android:id="@+id/idRLBSheet"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/black_shade_1"
+    android:background="@color/lightGrey"
     android:padding="4dp">
 
-    <!--text view for displaying course name-->
     <TextView
-        android:id="@+id/idTVCourseName"
+        android:id="@+id/idTVProjectName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
         android:padding="4dp"
-        android:text="Course Name"
-        android:textColor="@color/white"
-        android:textSize="15sp"
+        android:text="Project Name : "
+        android:textColor="@color/black"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
-    <!--image view for displaying course image-->
     <ImageView
-        android:id="@+id/idIVCourse"
+        android:id="@+id/idIVImage"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_below="@id/idTVCourseName"
+        android:layout_below="@id/idTVProjectName"
         android:layout_centerVertical="true"
         android:layout_margin="4dp"
         android:padding="4dp"
         android:src="@drawable/ic_launcher_background" />
 
-    <!--text view for displaying course description-->
     <TextView
-        android:id="@+id/idTVCourseDesc"
+        android:id="@+id/idTVProjectDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idTVCourseName"
-        android:layout_margin="4dp"
-        android:layout_toEndOf="@id/idIVCourse"
-        android:layout_toRightOf="@id/idIVCourse"
+        android:layout_below="@id/idTVProjectName"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_toEndOf="@id/idIVImage"
+        android:layout_toRightOf="@id/idIVImage"
         android:padding="3dp"
-        android:text="Description"
-        android:textColor="@color/white" />
+        android:text="Description : "
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="18sp" />
 
-    <!--text view for displaying course best suited for-->
     <TextView
-        android:id="@+id/idTVSuitedFor"
+        android:id="@+id/idTVCategory1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idTVCourseDesc"
-        android:layout_margin="4dp"
-        android:layout_toRightOf="@id/idIVCourse"
+        android:layout_below="@id/idTVProjectDesc"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_toRightOf="@id/idIVImage"
         android:padding="3dp"
-        android:text="Suited for"
-        android:textColor="@color/white" />
+        android:text="Category : "
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="18sp" />
 
-    <!--text view for displaying course price-->
+
     <TextView
-        android:id="@+id/idTVCoursePrice"
+        android:id="@+id/idTVBranch1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idTVSuitedFor"
-        android:layout_margin="4dp"
-        android:layout_toRightOf="@id/idIVCourse"
+        android:layout_below="@id/idTVCategory1"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_toRightOf="@id/idIVImage"
         android:padding="3dp"
-        android:text="Price"
-        android:textColor="@color/white"
+        android:text="Branch : "
+        android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -73,13 +82,29 @@
         android:id="@+id/idTVBatch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idTVCoursePrice"
-        android:layout_margin="4dp"
-        android:layout_toRightOf="@id/idIVCourse"
+        android:layout_below="@id/idTVBranch1"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_toRightOf="@id/idIVImage"
         android:padding="3dp"
-        android:text="Batch"
-        android:textColor="@color/white"
+        android:text="Batch : "
+        android:textColor="@color/black"
         android:textSize="18sp"
+        android:textStyle="bold" />
+
+<!--    <TextView-->
+<!--        android:id="@+id/idTVBatch"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/idTVBranch1"-->
+<!--        android:layout_margin="4dp"-->
+<!--        android:layout_toRightOf="@id/idTVBranch1"-->
+<!--        android:padding="3dp"-->
+<!--        android:text="Batch"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="18sp"-->
         android:textStyle="bold" />
 
 
@@ -90,17 +115,16 @@
         android:orientation="horizontal"
         android:weightSum="2">
 
-        <!--button for editing course-->
         <Button
             android:id="@+id/idBtnEditCourse"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:layout_weight="1"
-            android:text="Edit Course"
+            android:background="@drawable/custombtn"
+            android:text="Edit Project"
             android:textAllCaps="false" />
 
-        <!--button for viewing course details-->
         <Button
             android:id="@+id/idBtnVIewDetails"
             android:layout_width="0dp"
@@ -108,6 +132,7 @@
             android:layout_margin="6dp"
             android:layout_weight="1"
             android:text="Project Link"
+            android:background="@drawable/custombtn"
             android:textAllCaps="false" />
 
     </LinearLayout>

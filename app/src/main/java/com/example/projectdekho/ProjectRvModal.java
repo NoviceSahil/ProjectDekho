@@ -4,12 +4,10 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class ProjectRvModal implements Parcelable {
-    // creating variables for our different fields.
+
     private String projectName;
     private String projectDescription;
     private String batch;
-
-
 
     public String getBranch() {
         return branch;
@@ -25,7 +23,6 @@ public class ProjectRvModal implements Parcelable {
     private String projectLink;
     private String projectId;
 
-
     public String getProjectId() {
         return projectId;
     }
@@ -34,8 +31,6 @@ public class ProjectRvModal implements Parcelable {
         this.projectId = projectId;
     }
 
-
-    // creating an empty constructor.
     public ProjectRvModal() {
 
     }
@@ -63,7 +58,6 @@ public class ProjectRvModal implements Parcelable {
         }
     };
 
-    // creating getter and setter methods.
     public String getprojectName() {
         return projectName;
     }

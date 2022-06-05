@@ -23,37 +23,35 @@ import java.util.Map;
 
 public class EditProjectActivity extends AppCompatActivity {
 
-    // creating variables for our edit text, firebase database,
-    // database reference, course rv modal,progress bar.
     private TextInputEditText projectNameEdt, projectDescEdt,   bestSuitedEdt , batchEdt, categoryEdt , projectImgEdt, projectLinkEdt;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     ProjectRvModal projectRVModal;
     private ProgressBar loadingPB;
-    // creating a string for our course id.
+
     private String projectID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_project);
-        // initializing all our variables on below line.
-        Button addCourseBtn = findViewById(R.id.idBtnAddCourse);
-        projectNameEdt = findViewById(R.id.idEdtCourseName);
-        projectDescEdt = findViewById(R.id.idEdtCourseDescription);
-        categoryEdt  = findViewById(R.id.idEdtCoursePrice);
-        batchEdt = findViewById(R.id.idEdtBatch);
-        bestSuitedEdt = findViewById(R.id.idEdtSuitedFor);
-        projectImgEdt = findViewById(R.id.idEdtCourseImageLink);
-        projectLinkEdt = findViewById(R.id.idEdtCourseLink);
+
+        Button addProjectBtn = findViewById(R.id.idBtnUpdateProjectEdit);
+        projectNameEdt = findViewById(R.id.idEdtProjectNameEdit);
+        projectDescEdt = findViewById(R.id.idEdtProjectsDetailsEdit);
+        categoryEdt  = findViewById(R.id.idEdtCategoryEdit);
+        batchEdt = findViewById(R.id.idEdtBatchYearEdit);
+        bestSuitedEdt = findViewById(R.id.idEdtBranchEdit);
+        projectImgEdt = findViewById(R.id.idEdtProjectImageLinkEdit);
+        projectLinkEdt = findViewById(R.id.idEdtProjectLinkEdit);
         loadingPB = findViewById(R.id.idPBLoading);
         firebaseDatabase = FirebaseDatabase.getInstance();
-        // on below line we are getting our modal class on which we have passed.
+
         projectRVModal = getIntent().getParcelableExtra("project");
-        Button deleteCourseBtn = findViewById(R.id.idBtnDeleteCourse);
+        Button deleteProjectBtn = findViewById(R.id.idBtnDeleteProjectEdit);
 
         if (projectRVModal != null) {
-            // on below line we are setting data to our edit text from our modal class.
+
             projectNameEdt.setText(projectRVModal.getprojectName());
             bestSuitedEdt.setText(projectRVModal.getBranch());
             categoryEdt.setText(projectRVModal.getCategory());
@@ -64,16 +62,14 @@ public class EditProjectActivity extends AppCompatActivity {
              projectID = projectRVModal.getProjectId();
         }
 
-        // on below line we are initialing our database reference and we are adding a child as our course id.
-//        Toast.makeText(this, projectID, Toast.LENGTH_SHORT).show();
         databaseReference = firebaseDatabase.getReference("Projects").child(projectID);
-        // on below line we are adding click listener for our add course button.
-        addCourseBtn.setOnClickListener(new View.OnClickListener() {
+
+        addProjectBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // on below line we are making our progress bar as visible.
+
                 loadingPB.setVisibility(View.VISIBLE);
-                // on below line we are getting data from our edit text.
+
                 String projectName = projectNameEdt.getText().toString();
                 String projectDesc = projectDescEdt.getText().toString();
                 String category =    categoryEdt.getText().toString();
@@ -81,8 +77,7 @@ public class EditProjectActivity extends AppCompatActivity {
                 String bestSuited = bestSuitedEdt.getText().toString();
                 String projectImg = projectImgEdt.getText().toString();
                 String projectLink = projectLinkEdt.getText().toString();
-                // on below line we are creating a map for
-                // passing a data using key and value pair.
+
                 Map<String, Object> map = new HashMap<>();
                 map.put("projectName", projectName);
                 map.put("projectDescription", projectDesc);
@@ -93,16 +88,12 @@ public class EditProjectActivity extends AppCompatActivity {
                 map.put("projectLink", projectLink);
                 map.put("projectId", projectID);
 
-                // on below line we are calling a database reference on
-                // add value event listener and on data change method
+
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        // making progress bar visibility as gone.
                         loadingPB.setVisibility(View.GONE);
-                        // adding a map to our database.
                         databaseReference.updateChildren(map);
-                        // on below line we are displaying a toast message.
                         Toast.makeText(EditProjectActivity.this, "Project Updated..", Toast.LENGTH_SHORT).show();
                         // opening a new activity after updating our coarse.
                         startActivity(new Intent(EditProjectActivity.this, MainActivity.class));
@@ -110,30 +101,23 @@ public class EditProjectActivity extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-                        // displaying a failure message on toast.
                         Toast.makeText(EditProjectActivity.this, "Fail to update project..", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
         });
 
-        // adding a click listener for our delete course button.
-        deleteCourseBtn.setOnClickListener(new View.OnClickListener() {
+        deleteProjectBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // calling a method to delete a course.
                 deleteCourse();
             }
         });
-
     }
 
     private void deleteCourse() {
-        // on below line calling a method to delete the course.
         databaseReference.removeValue();
-        // displaying a toast message on below line.
-        Toast.makeText(this, "Course Deleted..", Toast.LENGTH_SHORT).show();
-        // opening a main activity on below line.
+        Toast.makeText(this, "Project Deleted..", Toast.LENGTH_SHORT).show();
         startActivity(new Intent(EditProjectActivity.this, MainActivity.class));
     }
 }
