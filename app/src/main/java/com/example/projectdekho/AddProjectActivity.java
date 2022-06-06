@@ -58,7 +58,7 @@ public class AddProjectActivity extends AppCompatActivity {
         addCourseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loadingPB.setVisibility(View.VISIBLE);
+//                loadingPB.setVisibility(View.VISIBLE);
 
                 String projectName = projectNameEdt.getText().toString();
                 String projectDesc = projectDescEdt.getText().toString();

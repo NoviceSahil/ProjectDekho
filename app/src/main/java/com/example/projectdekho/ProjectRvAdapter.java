@@ -21,13 +21,13 @@ public class ProjectRvAdapter extends RecyclerView.Adapter<ProjectRvAdapter.View
 
     private ArrayList<ProjectRvModal> ProjectRvModalArrayList;
     private Context context;
-    private CourseClickInterface courseClickInterface;
+    private ProjectClickInterface projectClickInterface;
     int lastPos = -1;
 
-    public ProjectRvAdapter(ArrayList<ProjectRvModal> ProjectRvModalArrayList, Context context, CourseClickInterface courseClickInterface) {
+    public ProjectRvAdapter(ArrayList<ProjectRvModal> ProjectRvModalArrayList, Context context,ProjectClickInterface projectClickInterface) {
         this.ProjectRvModalArrayList = ProjectRvModalArrayList;
         this.context = context;
-        this.courseClickInterface = courseClickInterface;
+        this.projectClickInterface = projectClickInterface;
     }
 
     @NonNull
@@ -50,7 +50,7 @@ public class ProjectRvAdapter extends RecyclerView.Adapter<ProjectRvAdapter.View
         holder.projectIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                courseClickInterface.onCourseClick(position);
+                projectClickInterface.onProjectClick(position);
             }
         });
     }
@@ -85,8 +85,8 @@ public class ProjectRvAdapter extends RecyclerView.Adapter<ProjectRvAdapter.View
         }
     }
 
-    public interface CourseClickInterface {
-        void onCourseClick(int position);
+    public interface ProjectClickInterface {
+        void onProjectClick(int position);
     }
 }
 

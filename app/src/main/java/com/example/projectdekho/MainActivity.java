@@ -35,7 +35,7 @@ import com.squareup.picasso.Picasso;
 import java.text.CollationElementIterator;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements ProjectRvAdapter.CourseClickInterface {
+public class MainActivity extends AppCompatActivity implements ProjectRvAdapter.ProjectClickInterface {
 
     private SearchView searchView;
     private TextView textViewSearch;
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements ProjectRvAdapter.
             }
         });
 
-        ProjectRvAdapter = new ProjectRvAdapter(ProjectRvModalArrayList, this, this::onCourseClick);
+        ProjectRvAdapter = new ProjectRvAdapter(ProjectRvModalArrayList, this, this::onProjectClick);
 
         projectRV.setLayoutManager(new LinearLayoutManager(this));
 
@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements ProjectRvAdapter.
 
 
     @Override
-    public void onCourseClick(int position) {
+    public void onProjectClick(int position) {
 
         displayBottomSheet(ProjectRvModalArrayList.get(position));
     }
@@ -159,13 +159,15 @@ public class MainActivity extends AppCompatActivity implements ProjectRvAdapter.
     }
     private void processSearch(String s) {
 
-        databaseReference.orderByChild("projectName").startAt(s).endAt(s+"\uf8ff").addChildEventListener(new ChildEventListener() {
-            @Override
+        databaseReference.orderByChild("projectName").startAt(s.toUpperCase()).endAt(s.toLowerCase()+"\uf8ff").addChildEventListener(new ChildEventListener() {
+
+                @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
 
                 ProjectRvModalArrayList.add(snapshot.getValue(ProjectRvModal.class));
                 ProjectRvAdapter.notifyDataSetChanged();
             }
+
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
@@ -211,7 +213,6 @@ public class MainActivity extends AppCompatActivity implements ProjectRvAdapter.
                 if(searchValue.equals("")) {
                     getProjects();
                 } else {
-                    Toast.makeText(MainActivity.this, "hello", Toast.LENGTH_SHORT).show();
                     processSearch(searchValue);
                     ProjectRvModalArrayList.clear();
                 }
