@@ -44,6 +44,7 @@ public class AddProjectActivity extends AppCompatActivity {
         bestSuitedEdt = findViewById(R.id.idEdtCategoryAdd);
         projectImgEdt = findViewById(R.id.idEdtProjectImageLinkAdd);
         projectLinkEdt = findViewById(R.id.idEdtProjectLinkAdd);
+
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel("1", "Project Added", NotificationManager.IMPORTANCE_DEFAULT);
             NotificationManager manager = getSystemService(NotificationManager.class);
@@ -64,7 +65,7 @@ public class AddProjectActivity extends AppCompatActivity {
                 String projectDesc = projectDescEdt.getText().toString();
                 String bestSuited = branch.getText().toString();
                 String batch = batchEdt.getText().toString();
-                String  category = bestSuitedEdt.getText().toString();
+                String category = bestSuitedEdt.getText().toString();
                 String projectImg = projectImgEdt.getText().toString();
                 String projectLink = projectLinkEdt.getText().toString();
                 projectID = projectName;
