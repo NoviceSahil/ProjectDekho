@@ -8,7 +8,7 @@ Hey Everyone, Thanks for coming here...let us know about for what purpose this a
 
 3.This gives them idea either to develop a new project or rather they want to work on previous projects to add features or to enhance it.
 
-4.It will keep tracksiof all projects of various department and helps avoiding common project. All projects can be accessed at one place. 
+4.It will keep track of all projects of various department and helps avoiding common project. All projects can be accessed at one place. 
 
 5. This app is developed by :
 
