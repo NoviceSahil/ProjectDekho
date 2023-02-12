@@ -10,6 +10,3 @@ Hey Everyone, Thanks for coming here...let us know about for what purpose this a
 
 4.It will keep track of all projects of various department and helps avoiding common project. All projects can be accessed at one place. 
 
-5. This app is developed by :
-
-   Sahil ( Me ), Mihir & Rohit 
